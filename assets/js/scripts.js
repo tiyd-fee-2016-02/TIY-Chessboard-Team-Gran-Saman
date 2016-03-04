@@ -31,12 +31,8 @@ $(function () {
     console.log(board.join('\n') + '\n\n');
 
 
-var temp = Object.create(board);
-
 var moves = {};
-moves[0] = temp;
-
-
+moves[0] = board;
 
 // console.log(moves);
 console.log(moves[0]);
@@ -44,17 +40,20 @@ console.log(board);
 // console.log(Object.keys(moves).length);
 
 
-  board[4][4] = board[6][4];
-  board[6][4] = ' ';
+  // board[4][4] = board[6][4];
+  // board[6][4] = ' ';
+var temp = board;
+  temp[4][4] = temp[6][4];
+  temp[6][4] = ' ';
 
-  console.log(board.join('\n') + '\n\n');
+console.log(temp.join('\n') + '\n\n');
 
-moves[1] = board;
+moves[1] = temp;
 // console.log(moves);
-console.log("Move 1 " + moves[1]);
-console.log(board);
+// console.log("Move 1 " + moves[1]);
+// console.log(board);
 
-console.log(temp);
+// console.log(temp);
 
   $("[class*='btn-']").on("click", function(e) {
     e.preventDefault();
