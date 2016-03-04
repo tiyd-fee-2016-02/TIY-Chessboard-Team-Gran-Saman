@@ -1,4 +1,60 @@
-/* styles.css */
+/* position numbers in rank and file vertically */
+.main-container [class*='col-']:nth-child(2n-1) .row-2 div {
+  padding-top: 24px;
+  /*border: 1px dashed red;*/
+}
+
+/* position letters in rank an file */
+/*.main-container .col-2 [class^='row-']:nth-child(2n-1) div {
+  padding-top: 15px;
+}*/
+
+/* position letters in rank and file vertically */
+.main-container .col-2 .row-1 div {
+  padding-top: 10px;
+}
+
+/* position letters in rank and file vertically */
+.main-container .col-2 .row-3 div {
+  /*padding-top: 10px;*/
+  margin-top: -7px;
+  /*border: 1px dashed blue;*/
+}
+
+
+/* position numbers in rank and file horizontally */
+.col-1 .row-2 div {
+  height: 68px;
+  text-align: right;
+  padding-right: 15px;
+
+}
+
+/* position numbers in rank and file horizontally */
+.col-3 .row-2 div {
+  height: 68px;
+  padding-left: 10px;
+}
+
+.game-container [class*='game-row-'] div {
+    padding: 15px;
+    background: #EFEFEF;
+    text-align: center;
+    /* color: #C7C767;   gold */
+    /* color: #ABAB90;    silver */
+    font-size: 35px;
+    vertical-align: top;   /*  keeps game space <div> aligned against top of container regardless of content */
+}
+
+/* color every other game board space black in odd rows */
+.game-container [class*='game-row-']:nth-child(2n-1) div:nth-child(2n) {
+  background: #888;
+}
+
+/* color every other game board space black in even rows */
+.game-container [class*='game-row-']:nth-child(2n) div:nth-child(2n-1) {
+  background: #888;
+}
 
 *, *:after, *:before {
   box-sizing: border-box;
@@ -6,9 +62,9 @@
 
 body {
   margin: 5% auto;
-  width: 1050px;
-  border: 1px dashed blue;
-  /*font-size: 14px;*/
+  width: 750px;
+  font-family: 'Lato', Arial, sans-serif;
+  /*border: 1px dashed blue;*/
 }
 
 .main-container {
@@ -17,39 +73,39 @@ body {
 }
 
 .col-1, .col-3 {
-  width: 100px;
+  width: 70px;
   display: inline-block;
   vertical-align: top;
 }
 
 .col-2 {
-  width: 800px;
+  width: 560px;
   display: inline-block;
 }
 
 .row-1, .row-3 {
-  height: 100px;
+  height: 35px;
 }
 
 .row-2 {
-  height: 800px;
+  height: 560px;
   margin: 5px 0px;
 }
 
 header{
-  border: 1px solid red;
-  height: 50px;
+  /*border: 1px solid red;*/
+  height: 30px;
   text-align: center;
   font-size: 26px;
 }
 
 footer{
-  height: 100px;
-  border: 1px solid red;
+  height: 30px;
+  /*border: 1px solid red;*/
 }
 
 div{
-  border: 1px solid red;
+  /*border: 1px dashed blue;*/
 }
 
 /*NEW CODE*/
@@ -57,15 +113,10 @@ div{
 .col-2 .row-1 div,
 .col-2 .row-3 div{
   display: inline-block;
-  width: 98px;
-  height: 98px;
+  width: 68px;
+  height: 35px;
   margin-left:1px;
   text-align: center;
-}
-
-.col-2 .row-1,
-.col-2 .row-3{
-  margin-left: 2px;
 }
 
 .col-2 .row-2 div{
@@ -74,12 +125,11 @@ div{
 
 .col-2 .row-2 div div{
   display: inline-block;
-  width: 98px;
-  height: 98px;
+  width: 68px;
+  height: 68px;
 }
 
-.col-1 .row-2 div,
-.col-3 .row-2 div{
-  height: 100px;
-  text-align: center;
+.col-2 .row-1,
+.col-2 .row-3 {
+  margin-left: 2px;
 }
