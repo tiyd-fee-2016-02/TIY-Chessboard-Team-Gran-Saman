@@ -1,1 +1,47 @@
 /* styles.css */
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 5% auto;
+  width: 1050px;
+  border: 1px dashed blue;
+}
+
+.main-container {
+  margin: 0px 17px;
+  display: inline-block;
+}
+
+.col-1, .col-3 {
+  width: 100px;
+  display: inline-block;
+}
+
+.col-2 {
+  width: 800px;
+  display: inline-block;
+}
+
+.row-1, .row-3 {
+  height: 100px;
+}
+
+.row-2 {
+  height: 800px;
+  margin: 5px 0px;
+}
+
+header{
+  border: 1px solid red;
+}
+
+footer{
+  border: 1px solid red;
+}
+
+div{
+  border: 1px solid red;
+}
