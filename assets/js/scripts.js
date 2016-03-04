@@ -42,9 +42,9 @@ console.log(board);
 
   // board[4][4] = board[6][4];
   // board[6][4] = ' ';
-var temp = board;
-  temp[4][4] = temp[6][4];
-  temp[6][4] = ' ';
+  var temp = board;
+    temp[4][4] = temp[6][4];
+    temp[6][4] = ' ';
 
 console.log(temp.join('\n') + '\n\n');
 
