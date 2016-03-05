@@ -13,7 +13,8 @@ $(function () {
     "b" : "&#9816",
     "q" : "&#9813",
     "k" : "&#9812",
-    "p" : "&#9817"
+    "p" : "&#9817",
+    " " : " "
   };
 
   console.log(entityCodex["R"]);
@@ -150,14 +151,69 @@ $(function () {
 
       console.log(board10.join('\n') + '\n\n');
 
+// render(board0);
 
-var moves = {};
+  var moveCount = 0;
 
-
-  $("[class*='btn-']").on("click", function(e) {
+  $("[class*='btn-step-']").on("click", function(e) {
     e.preventDefault();
-    console.log("*** button click ***");
+    console.log("*** step forward button click ***");
+
+    console.log("moveCount => " + moveCount);
+    if (moveCount >= 0 && moveCount <= 10) {
+
+      if ($(this).hasClass("btn-step-forward") && moveCount >= 0 && moveCount < 10) {
+        moveCount++;
+      } else if ($(this).hasClass("btn-step-back") && moveCount > 0 && moveCount <=  10) {
+        moveCount--;
+      }
+
+      if (moveCount === 0) {
+        render(board0);
+      } else if (moveCount === 1) {
+        render(board1);
+      } else if (moveCount === 2) {
+        render(board2);
+      } else if (moveCount === 3) {
+        render(board3);
+      } else if (moveCount === 4) {
+        render(board4);
+      } else if (moveCount === 5) {
+        render(board5);
+      } else if (moveCount === 6) {
+        render(board6);
+      } else if (moveCount === 7) {
+        render(board7);
+      } else if (moveCount === 8) {
+        render(board8);
+      } else if (moveCount === 9) {
+        render(board9);
+      } else if (moveCount === 10) {
+        render(board10);
+      }
+    }
+
   })
 
+  // $("[class*='btn-']").on("click", function(e) {
+  //   e.preventDefault();
+  //   console.log("*** button click ***");
+  //
+  //   if (moveCount >= 0 && moveCount <= 10) {
+  //     if (moveCount == ) {
+  //
+  //     } else if {}
+  //   }
+  // })
+
+  // draw game board
+  function render(arr) {
+    for(var rowCount = 0; rowCount < 8; rowCount++) {
+      var rowArray = $("[class*='game-row-" + rowCount + "'] div");
+      for(var colCount = 0; colCount < 8; colCount++ ) {
+        $(rowArray[colCount]).html(entityCodex[arr[rowCount][colCount]]);
+      }
+    }
+  }  // end of render()
 
 });  // End of file.
