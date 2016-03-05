@@ -155,6 +155,18 @@ $(function () {
 
   var moveCount = 0;
 
+  $(".btn-fast-forward").on("click", function(e) {
+    e.preventDefault();
+    moveCount = 9;
+    render(board9);
+  });
+
+  $(".btn-rewind").on("click", function(e) {
+    e.preventDefault();
+    moveCount = 0;
+    render(board0);
+  });
+
   $("[class*='btn-step-']").on("click", function(e) {
     e.preventDefault();
     console.log("*** step forward button click ***");
