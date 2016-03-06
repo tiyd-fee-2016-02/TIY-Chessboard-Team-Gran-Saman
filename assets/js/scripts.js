@@ -192,21 +192,21 @@ var delay = 1000;
       gamePaused = false;
       $.each(moves, function(index) {
 
-        if (index < moveCount) {
+        if (index < moveCount || gamePaused===true) {  //ADDED GAMEPAUSED = TRUE
           return;
         }
 console.log(timeoutId);
         timeoutId = window.setTimeout(function() {
 console.log(timeoutId);
-          if (index >= moveCount && moveCount >= 0 && moveCount < 10) {
+          if (index >= moveCount && moveCount >= 0 && moveCount < 9) {
 
             if (gamePaused) {
               // window.clearTimeout(timeoutId);
               return;
             }
 
-            render(moves[index]);
             moveCount++;
+            render(moves[moveCount]);  //SWAPPED THE LOCATION OF LINES 208 and 209 AND PUT MOVECOUNT INSTEAD OF INDEX
             console.log("Index of render() call = > " + index);
           }
         }, delay);
